@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+</head>
+<style>
+
+.cart-container {
+    width: 100%;
+    height: 100%;
+    background-color: #2b2d33;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-top: 10px;
+    padding-bottom: 20px;
+}
+.cart-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.cart-table th, .cart-table td {
+    text-align: left;
+    padding: 10px;
+    border-bottom: 1px solid #444;
+    color: #fff;
+}
+
+.cart-table th {
+    background-color: #333;
+}
+
+.product-image img {
+    width: 70px;
+    height: auto;
+    margin: 5% !important;
+}
+
+.product-name {
+    font-weight: bold;
+    color: #fff;
+}
+
+.product-code, .product-stock, .product-price, .product-actions {
+    color: #a8a9ad;
+}
+
+.product-stock a {
+    color: #00bcd4;
+    text-decoration: none;
+}
+
+.product-price .discounted-price {
+    color: #00bcd4;
+    font-weight: bold;
+}
+
+.product-price .original-price {
+    text-decoration: line-through;
+    color: #a8a9ad;
+    margin-left: 10px;
+}
+
+.product-actions button {
+    background: none;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+    color: #fff;
+}
+
+.product-actions .remove-item {
+    border-radius: 4px;
+    padding: 5px 8px;
+}
+
+.continue-button {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 25px;
+}
+
+.continue-button button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    padding: 10px !important;
+    margin-top: 2%;
+}
+.continue-button a {
+    text-decoration: none;
+    color: #fff;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+thead {
+    position: sticky;
+    top: 0; 
+    background-color: #fff; 
+    z-index: 1; 
+}
+th, td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+tbody {
+    display: block;
+   
+}
+
+thead, tbody tr {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+}
+::-webkit-scrollbar {
+    display: none;
+}
+.baslik tr th{
+    padding: 1% !important;
+}
+
+@media (max-width: 768px) {
+    thead {
+        display: none;
+
+    }
+        .cart-container {
+        padding: 10px;
+        margin-top: 0;
+        border-radius: 0;
+        justify-content: flex-start; 
+    }
+
+    
+    .cart-table {
+        display: block;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    thead {
+        display: none;
+    }
+
+   
+    tbody tr {
+        display: block; 
+        margin-bottom: 20px; 
+        background-color: #2b2d33; 
+        border-radius: 8px;
+        padding: 10px;
+    }
+
+ 
+    tbody tr td {
+        display: block; 
+        padding: 10px !important; 
+        border: none; 
+        border-bottom: 1px solid #444;
+        text-align: left;
+        position: relative;
+        justify-content: flex-start;
+        align-items: flex-start;
+    }
+
+   
+    tbody tr td::before {
+        content: attr(data-label);
+        font-weight: bold;
+        color: #a8a9ad; 
+        display: block; 
+        margin-bottom: 5px; 
+    }
+
+    
+    tbody tr td:last-child {
+        border-bottom: none;
+    }
+
+    .product-image img {
+        width: 40%; 
+        margin: 0 auto 10px; 
+        display: block; 
+        margin-left: 25% !important;
+    }
+
+    .product-name {
+        font-size: 16px; 
+        margin-bottom: 5px; 
+    }
+
+    .product-code, .product-stock, .product-price, .product-actions {
+        font-size: 16px; 
+    }
+
+    .product-stock a {
+        font-size: 16px; 
+    }
+
+    .product-price .discounted-price {
+        font-size: 16px;
+        margin-left: 0px; 
+    }
+
+    .product-price .original-price {
+        font-size: 16px; 
+        margin-left: 0; 
+        display: inline; 
+    }
+
+    .product-actions button {
+        font-size: 16px; 
+        padding: 5px; 
+        margin: 0 2px; 
+    }
+
+    .continue-button {
+        flex-direction: column; 
+        align-items: center; 
+        margin-bottom: 15px; 
+    }
+
+    .continue-button button {
+        width: 40%;
+        padding: 10px; 
+        margin-top: 10px; 
+        font-size: 16px; 
+    }
+
+    .continue-button a {
+        display: block; 
+        text-align: center; 
+    }
+
+    .cart-table td {
+        word-wrap: break-word; 
+    }
+
+    ::-webkit-scrollbar {
+        display: none; 
+    }
+    .remove-item {
+        font-size: 24px !important;
+        padding-left: 10px !important;
+    }
+    .product-actions {
+        border-bottom: 1px solid #444 !important;
+    }
+}
+
+</style>
+<body>
+    <nav class="navigation">
+        <div class="content">
+          <p style="color: #fff;">  Türkiyenin En Güvenilir Oyun Mağazası </p>
+        </div>
+        <div class="main">
+           <a href="index.html">
+            <img src="14.png" alt="">
+           </a>
+            <div class="search-box">
+                <input type="text" placeholder="Oyun Ara...">
+                <button style="color: #fff;">Arama</button>
+            </div>
+            <div class="icons">
+                <div class="basketicon">
+                    <a href="sepetim.html"><i class="fa-solid fa-basket-shopping"></i></a>
+                   </div>
+                    <div class="hearticon">
+                       <a href="#"> <i class="fa-solid fa-heart"></i></a>
+                    </div>
+               </div>
+            <div class="entire">
+               <a href="giris.html"><p style="color: #fff;"> Giriş Yap </p></a>
+            </div>
+        </div>
+    </nav> 
+
+
+    <div class="cart-container"> 
+        <table class="cart-table">
+            <thead class="baslik">
+                <tr>
+                    <th>RESİM</th>
+                    <th>ÜRÜN ADI</th>
+                    <th>KODU</th>
+                    <th>STOK</th>
+                    <th>FİYATI</th>
+                    <th>EYLEM</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="product-image">
+                        <img src="image6.jpg" alt="EA SPORTS FC 25">
+                    </td>
+                    <td class="product-name">EA SPORTS FC 25 (FIFA 25) - Ön Sipariş</td>
+                    <td class="product-code">easportsfc25</td>
+                    <td class="product-stock"><a href="#">Stokta Var</a></td>
+                    <td class="product-price">
+                        <span class="discounted-price">349,90 TL</span>
+                        <span class="original-price">2.400,00 TL</span>
+                    </td>
+                    <td class="product-actions">
+                        <button class="add-to-bag"><i class="fa-solid fa-basket-shopping"></i></button>
+                        <button class="remove-item"><i class="fa-solid fa-xmark" style="color: red;"></i></button>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="product-image">
+                        <img src="image6.jpg" alt="EA SPORTS FC 25">
+                    </td>
+                    <td class="product-name">EA SPORTS FC 25 (FIFA 25) - Ön Sipariş</td>
+                    <td class="product-code">easportsfc25</td>
+                    <td class="product-stock"><a href="#">Stokta Var</a></td>
+                    <td class="product-price">
+                        <span class="discounted-price">349,90 TL</span>
+                        <span class="original-price">2.400,00 TL</span>
+                    </td>
+                    <td class="product-actions">
+                        <button class="add-to-bag"><i class="fa-solid fa-basket-shopping"></i></button>
+                        <button class="remove-item"><i class="fa-solid fa-xmark" style="color: red;"></i></button>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="product-image">
+                        <img src="image6.jpg" alt="EA SPORTS FC 25">
+                    </td>
+                    <td class="product-name">EA SPORTS FC 25 (FIFA 25) - Ön Sipariş</td>
+                    <td class="product-code">easportsfc25</td>
+                    <td class="product-stock"><a href="#">Stokta Var</a></td>
+                    <td class="product-price">
+                        <span class="discounted-price">349,90 TL</span>
+                        <span class="original-price">2.400,00 TL</span>
+                    </td>
+                    <td class="product-actions">
+                        <button class="add-to-bag"><i class="fa-solid fa-basket-shopping"></i></button>
+                        <button class="remove-item"><i class="fa-solid fa-xmark" style="color: red;"></i></button>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="product-image">
+                        <img src="image6.jpg" alt="EA SPORTS FC 25">
+                    </td>
+                    <td class="product-name">EA SPORTS FC 25 (FIFA 25) - Ön Sipariş</td>
+                    <td class="product-code">easportsfc25</td>
+                    <td class="product-stock"><a href="#">Stokta Var</a></td>
+                    <td class="product-price">
+                        <span class="discounted-price">349,90 TL</span>
+                        <span class="original-price">2.400,00 TL</span>
+                    </td>
+                    <td class="product-actions">
+                        <button class="add-to-bag"><i class="fa-solid fa-basket-shopping"></i></button>
+                        <button class="remove-item"><i class="fa-solid fa-xmark" style="color: red;"></i></button>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="product-image">
+                        <img src="image6.jpg" alt="EA SPORTS FC 25">
+                    </td>
+                    <td class="product-name">EA SPORTS FC 25 (FIFA 25) - Ön Sipariş</td>
+                    <td class="product-code">easportsfc25</td>
+                    <td class="product-stock"><a href="#">Stokta Var</a></td>
+                    <td class="product-price">
+                        <span class="discounted-price">349,90 TL</span>
+                        <span class="original-price">2.400,00 TL</span>
+                    </td>
+                    <td class="product-actions">
+                        <button class="add-to-bag"><i class="fa-solid fa-basket-shopping"></i></button>
+                        <button class="remove-item"><i class="fa-solid fa-xmark" style="color: red;"></i></button>
+                    </td>
+                </tr>
+                
+            </tbody>
+        </table>
+
+        <div class="continue-button">
+            <button><a href="index.html">Ana Sayfaya Dön</a></button>
+        </div>
+        
+    </div>
+
+    <footer class="footer">
+        <div class="footer-top">
+            <div class="footer-item">
+                <img src="14.png" alt="UcuzGames Logo" class="logo">
+            </div>
+            <div class="footer-item erisim" >
+                <h3>Hızlı Erişim</h3>
+                <ul>
+                    <li><a href="#">Hakkımızda</a></li>
+                    <li><a href="#">Giriş Yap</a></li>
+                    <li><a href="#">Kayıt Ol</a></li>
+                    <li><a href="#">Hesabım</a></li>
+                    <li><a href="#">Şifremi Unuttum</a></li>
+                </ul>
+            </div>
+            <div class="footer-item kurumsal" >
+                <h3>Kurumsal</h3>
+                <ul>
+                    <li><a href="#">Üyelik Sözleşmesi</a></li>
+                    <li><a href="#">Hizmet Sözleşmesi</a></li>
+                    <li><a href="#">Kullanım Koşulları</a></li>
+                    <li><a href="#">Mesafeli Satış Sözleşmesi</a></li>
+                    <li><a href="#">Gizlilik ve Güvenlik Politikası</a></li>
+                    <li><a href="#">İptal ve Geri İade Sözleşmesi</a></li>
+                    <li><a href="#">KVKK Gizlilik Sözleşmesi</a></li>
+                </ul>
+            </div>
+            <div class="footer-item medya">
+                <h3>Sosyal Medya</h3>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+                
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>LESS GAMES © 2023 – 2024 Tüm Hakları Saklıdır.</p>
+            <div class="payment-icons">
+                <img src="card1.png" alt="Visa">
+                <img src="card2.png" alt="MasterCard">
+                <img src="card3.png" alt="World">
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

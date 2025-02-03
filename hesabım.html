@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+   
+</head>
+<style>
+
+.personal-details, .account-access {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+
+.wrapper {
+    width: 100%;
+    padding: 20px;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column; 
+    align-items: flex-start;
+    margin-left: 3%;
+}
+.heading {
+    margin-top: 0px !important;
+    font-size: 24px;
+    margin-bottom: 20px;
+    margin-left: 2% !important;
+}
+
+.block {
+    background-color: #2a2d32;
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.block h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.block p {
+    font-size: 14px;
+    color: #888;
+    margin-bottom: 20px;
+}
+
+.personal-details, .account-access {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+.avatar-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 1%;
+}
+
+.avatar-container img {
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    margin-bottom: 10px;
+}
+.block p {
+    margin-left: 1%;
+}
+.avatar-container a {
+    text-decoration: none;
+    color: #007bff;
+    font-size: 14px;
+}
+
+.data-fields {
+    flex: 1;
+}
+
+.field-group {
+    display: flex;
+    align-items: center; 
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.field-group label {
+    margin-right: 10px; 
+    flex: 1;
+    color: #fff;
+}
+.field-group input {
+    margin-right: 8%;
+}
+h2 {
+    color: #fff;
+    font-size: 22px !important;
+    padding-top: 1.5% !important;
+}
+
+.field-group input {
+    flex: 2;
+    padding: 10px;                 /*yüksekliği buradan ayarlamıştım */
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    font-size: 14px;
+    background-color: #f0f0f0;
+}
+
+
+.update-btn {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px !important;
+    margin-bottom: 1% !important;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 15% !important;
+    margin-left: 38%;
+}
+
+.update-btn:hover {
+    background-color: #0056b3;
+}
+.section-one {
+    width: 90%;
+    margin-left: 2%;
+}
+.section-two {
+    width: 90%;
+    margin-left: 2%;
+}
+::-webkit-scrollbar {
+    display:  none;
+}
+.account-access {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+.section-two label {
+    margin-left: 10% !important;
+}
+.field-group input {
+    height: 40px;
+}
+
+@media (max-width: 768px) {
+    .wrapper {
+        padding: 10px;
+    }
+    
+    .heading {
+        font-size: 20px;
+        margin-bottom: 15px;
+        margin-left: 0;
+    }
+
+    .block {
+        padding: 15px;
+        margin-bottom: 15px;
+        width: 95% !important;
+    }
+
+    .block h2 {
+        font-size: 16px;
+    }
+
+    .block p {
+        font-size: 12px;
+    }
+
+    .personal-details, .account-access {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .avatar-container img {
+        width: 90px;
+        height: 90px;
+    }
+
+    .avatar-container a {
+        font-size: 16px;
+    }
+
+    .data-fields {
+        width: 100%;
+    }
+
+    .field-group {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .field-group label {
+        margin-right: 0;
+        margin-bottom: 5px;
+        margin-left: 0px !important;
+    }
+
+    .field-group input {
+        width: 90%;
+        margin-left: 3%;
+    }
+    .field-group label {
+        margin-left: 3% !important;
+    }
+    .update-btn {
+        width: 50% !important;
+        margin-left: 25%;
+       margin-bottom: 5% !important;
+    }
+
+    .section-one, .section-two {
+        width: 100%;
+        margin-left: 0;
+    }
+    .field-group input {
+       font-size: 16px;
+       padding: 1% 0% !important;
+    }
+    .info {
+        text-align: center !important;
+        font-size: 16px !important;
+    }
+}
+
+</style>
+<body>
+    <nav class="navigation">
+        <div class="content">
+          <p style="color: #fff;">  Türkiyenin En Güvenilir Oyun Mağazası </p>
+        </div>
+        <div class="main">
+           <a href="index.html">
+            <img src="14.png" alt="">
+           </a>
+            <div class="search-box">
+                <input type="text" placeholder="Oyun Ara...">
+                <button style="color: #fff;">Arama</button>
+            </div>
+            <div class="icons">
+                <div class="basketicon">
+                    <a href="sepetim.html"><i class="fa-solid fa-basket-shopping"></i></a>
+                   </div>
+                    <div class="hearticon">
+                       <a href="favoriler.html"> <i class="fa-solid fa-heart"></i></a>
+                    </div>
+               </div>
+            <div class="entire">
+               <a href="giris.html"><p style="color: #fff;"> Giriş Yap </p></a>
+            </div>
+        </div>
+    </nav>
+
+
+    <div class="wrapper">
+        <h1 class="heading">Ayarlar</h1>
+
+       
+        <div class="block section-one">
+            <h2>Kişisel Bilgiler</h2>
+            <p class="info">Hesabınızla İlgili Bilgiler</p>
+            <div class="personal-details">
+                <div class="avatar-container">
+                    <img src="image6.jpg" alt="Profile Image">
+                    <a href="#">Resim yükle</a>
+                </div>
+                <div class="data-fields">
+                    <div class="field-group">
+                        <label for="name">Ad Soyad</label>
+                        <input type="text" id="name" value="Hamza Şengül" style="padding: 8px 0px !important;">
+                    </div>
+                    <div class="field-group">
+                        <label for="community">Kullanıcı Adı</label>
+                        <input type="text" id="community" value="lessgame" style="padding: 8px 0px !important;">
+                    </div>
+                    <div class="field-group">
+                        <label for="email">E-mail</label>
+                        <input type="email" id="email" value="hamzasengul81@gmail.com" style="padding: 8px 0px !important;">
+                    </div>
+                    <div class="field-group">
+                        <label for="phone">Telefon Numarası</label>
+                        <input type="text" id="phone" value="+90 553 710 4484" style="padding: 8px 0px !important;">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+       
+        <div class="block section-two">
+            <h2>Giriş Bilgileri</h2>
+            <p class="info">Hesap Girişi İle İlgili Bilgiler</p>
+            <div class="account-access">
+                <div class="field-group">
+                    <label for="username">Kullanıcı Adı</label>
+                    <input type="email" id="username" value="hamzasengul" style="padding: 8px 0px !important;">
+                </div>
+                <div class="field-group">
+                    <label for="password">Parola</label>
+                    <input type="password" id="password" value="**********" style="padding: 8px 0px !important;">
+                </div>
+                <div class="field-group">
+                    <label for="password">Parola Takrar</label>
+                    <input type="password" id="password" value="**********" style="padding: 8px 0px !important;">
+                </div>
+                <button class="update-btn">Bilgileri Güncelle</button>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <footer class="footer">
+        <div class="footer-top">
+            <div class="footer-item">
+                <img src="14.png" alt="UcuzGames Logo" class="logo">
+            </div>
+            <div class="footer-item erisim" >
+                <h3>Hızlı Erişim</h3>
+                <ul>
+                    <li><a href="#">Hakkımızda</a></li>
+                    <li><a href="#">Giriş Yap</a></li>
+                    <li><a href="#">Kayıt Ol</a></li>
+                    <li><a href="#">Hesabım</a></li>
+                    <li><a href="#">Şifremi Unuttum</a></li>
+                </ul>
+            </div>
+            <div class="footer-item kurumsal" >
+                <h3>Kurumsal</h3>
+                <ul>
+                    <li><a href="#">Üyelik Sözleşmesi</a></li>
+                    <li><a href="#">Hizmet Sözleşmesi</a></li>
+                    <li><a href="#">Kullanım Koşulları</a></li>
+                    <li><a href="#">Mesafeli Satış Sözleşmesi</a></li>
+                    <li><a href="#">Gizlilik ve Güvenlik Politikası</a></li>
+                    <li><a href="#">İptal ve Geri İade Sözleşmesi</a></li>
+                    <li><a href="#">KVKK Gizlilik Sözleşmesi</a></li>
+                </ul>
+            </div>
+            <div class="footer-item medya">
+                <h3>Sosyal Medya</h3>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+                
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>LESS GAMES © 2023 – 2024 Tüm Hakları Saklıdır.</p>
+            <div class="payment-icons">
+                <img src="card1.png" alt="Visa">
+                <img src="card2.png" alt="MasterCard">
+                <img src="card3.png" alt="World">
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
